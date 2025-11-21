@@ -37,10 +37,12 @@
 
         <div class="relative w-80 h-6 bg-gray-200 rounded-full overflow-hidden shadow-inner border border-gray-300">
             <div
-                class="h-full bg-blue-600 transition-all duration-200 ease-out flex items-center justify-center"
+                class="h-full transition-all duration-200 ease-out flex items-center justify-center"
                 [style.width.%]="progreso()"
+                [class.bg-red-500]="progreso() < 40"
+                [class.bg-blue-600]="progreso() >= 40"
             >
-                </div>
+            </div>
         </div>
 
         <p class="text-lg font-medium text-gray-600">
