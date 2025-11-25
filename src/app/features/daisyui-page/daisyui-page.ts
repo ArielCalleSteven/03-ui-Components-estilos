@@ -10,7 +10,7 @@ import { ResponsiveShowcase } from './responsive-showcase/responsive-showcase';
 @Component({
   selector: 'app-daisyui-page',
   standalone: true,
-  imports: [CommonModule, Navbar, Footer, CodeMockup, ProductCard, DataTable, ResponsiveShowcase],
+  imports: [CommonModule,CodeMockup, ProductCard, DataTable, ResponsiveShowcase],
   templateUrl: './daisyui-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
