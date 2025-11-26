@@ -6,10 +6,13 @@ import { map } from 'rxjs';
 import { SimpsonsService } from '../simpsons/services/simpsons-service';
 import { PaginationService } from '../../shared/services/pagination';
 import { PaginationComponent } from '../../shared/components/pagination/pagination';
+import { HeroSimpsonsComponent } from '../simpsons/components/hero-simpsons/hero-simpsons';
+import { BreadcrumbsComponent } from '../../shared/components/breadcrumbs/breadcrumbs';
+import { BackToTopComponent } from '../../shared/components/back-to-top/back-to-top';
 @Component({
   selector: 'app-simpsons-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, PaginationComponent], 
+  imports: [CommonModule, RouterModule, PaginationComponent, HeroSimpsonsComponent, BreadcrumbsComponent, BackToTopComponent], 
   templateUrl: './simpsons-page.html', 
   styleUrl: './simpsons-page.css'      
 })

@@ -1,17 +1,26 @@
+<section class="p-8 relative">
 
+  <app-breadcrumbs
+    [items]="[
+      { label: 'Inicio', link: '/' },
+      { label: 'Simpsons', link: '/simpsons' },
+      { label: 'Personajes' }
+    ]">
+  </app-breadcrumbs>
 
-<section class="p-8">
-  <h1 class="text-3xl font-bold mb-2 text-center text-base-content">The Simpsons API</h1>
+  <app-hero-simpsons
+    [simpsonsCount]="simpsonsResource()?.count ?? 0"
+    [totalPages]="totalPages()">
+  </app-hero-simpsons>
+
   <h2 class="text-lg text-center mb-6 text-base-content/70">Listado de personajes</h2>
 
   @if (totalPages() > 0) {
     <div class="flex justify-center items-center h-20 mb-4">
-      
-      <app-pagination 
-        [pages]="totalPages()" 
+      <app-pagination
+        [pages]="totalPages()"
         [currentPage]="paginationService.currentPage()">
       </app-pagination>
-
     </div>
   }
 
@@ -40,7 +49,7 @@
               <td class="font-bold">{{ personaje.name }}</td>
               <td>{{ personaje.occupation }}</td>
               <td>
-                <span class="badge" 
+                <span class="badge"
                       [ngClass]="personaje.status === 'Alive' ? 'badge-success text-white' : 'badge-error text-white'">
                   {{ personaje.status }}
                 </span>
@@ -55,6 +64,8 @@
         </tbody>
       </table>
     </div>
-    
-    }
+  }
+
+  <app-back-to-top></app-back-to-top>
+
 </section>
